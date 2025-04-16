@@ -14,7 +14,7 @@ h1{
     margin-top:0px;
 }
 
-.flashcard{
+#flashcard{
     border: 2px black solid;
     border-radius: 20px;
     padding:25px;
