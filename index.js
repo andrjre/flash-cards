@@ -10,8 +10,8 @@ let questions = [
   "What is my name?",
   "What is my birthday?",
   "Can I drive?",
-  "How tall am I?",
-  "Am I fat?",
+  "What is my favourite food?",
+  "What is my favourite food?",
 ]
 let answers = [
   "Purple",
@@ -20,8 +20,8 @@ let answers = [
   "Andre",
   "02/04/2006",
   "Yes!",
-  "I don't know",
-  "No",
+  "Curry",
+  "Curry",
 ]
 
 let randomIndex = Math.floor(Math.random()* questions.length);
