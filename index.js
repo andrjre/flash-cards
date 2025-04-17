@@ -7,11 +7,21 @@ let questions = [
   "What is my favourite color?",
   "What is my favourite animal?",
   "What is my favourite food?",
+  "What is my name?",
+  "What is my birthday?",
+  "Can I drive?",
+  "How tall am I?",
+  "Am I fat?",
 ]
 let answers = [
   "Purple",
   "Donkey",
   "Curry",
+  "Andre",
+  "02/04/2006",
+  "Yes!",
+  "I don't know",
+  "No",
 ]
 
 let randomIndex = Math.floor(Math.random()* questions.length);
