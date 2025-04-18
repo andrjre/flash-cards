@@ -3,6 +3,7 @@ let flipped = true;
 let next = document.getElementById("next")
 let back = document.getElementById("back")
 let pastQuestion = []
+let pastAnswer = []
 console.log(pastQuestion)
 
 let questions = [
@@ -28,14 +29,26 @@ let answers = [
   "Darwin",
 ]
 
+let getCurrentQuestion = 0;
+console.log(getCurrentQuestion)
+
+
 let randomIndex = Math.floor(Math.random()* questions.length);
 let randomQuestion = questions[randomIndex]
 let answer = answers[randomIndex]
+let allQuestions = [randomQuestion]
+console.log(allQuestions)
 
 flashcard.style.backgroundColor = "white"
 flashcard.style.color = "black"
 flashcard.innerHTML = randomQuestion
-pastQuestion.push(flashcard.innerHTML)
+
+
+back.onclick = function(){
+  getCurrentQuestion = getCurrentQuestion - 1
+  flashcard.innerHTML = allQuestions[getCurrentQuestion]
+  console.log(getCurrentQuestion)
+}
 
 
 flashcard.onclick = function(){
@@ -44,13 +57,11 @@ flashcard.onclick = function(){
     flashcard.style.backgroundColor = "white"
     flashcard.style.color = "black"
     flashcard.innerHTML = randomQuestion
-    flashcard.style.transition = "ease-in-out .2s"
     }
     else{
     flashcard.style.backgroundColor = "grey"
     flashcard.style.color = "white"
     flashcard.innerHTML = answer
-    flashcard.style.transition = "ease-in-out .2s"
     }
 
 }
@@ -59,19 +70,15 @@ next.onclick = function(){
   randomIndex = Math.floor(Math.random()* questions.length);
   randomQuestion = questions[randomIndex]
   answer = answers[randomIndex]
-  flashcard.style.backgroundColor = "white"
-  flashcard.style.color = "black"
-  flashcard.innerHTML = randomQuestion
-  console.log(flashcard.innerHTML)
-  pastQuestion.push(flashcard.innerHTML)
-  console.log(pastQuestion)
+  allQuestions.push(randomQuestion)
+  console.log(allQuestions)
+  getCurrentQuestion = getCurrentQuestion + 1
+  flashcard.innerHTML = allQuestions[getCurrentQuestion]
 }
 
 
-back.onclick = function(){
-  flashcard.innerHTML = pastQuestion[pastQuestion.length - 2]
-  console.log(pastQuestion)
-}
+
 
 //fix back button working multiple times 
 // fix double of same flash card appearing 
+// bug where if you go back answer is to the question after
