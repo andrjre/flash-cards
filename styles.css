@@ -68,3 +68,8 @@ h2{
     transform: scale(1.1);
     cursor:pointer;
 }
+
+.button:active{
+    background-color: grey;
+    transition: 0s;
+}
