@@ -2,6 +2,8 @@ let flashcard = document.getElementById("flashcard")
 let flipped = true;
 let next = document.getElementById("next")
 let back = document.getElementById("back")
+let pastQuestion = []
+console.log(pastQuestion)
 
 let questions = [
   "What is my favourite color?",
@@ -10,6 +12,9 @@ let questions = [
   "What is my name?",
   "What is my birthday?",
   "Can I drive?",
+  "Do I have a mole?",
+  "What are my dogs names?",
+  "What is my cats name?",
 ]
 let answers = [
   "Purple",
@@ -18,9 +23,10 @@ let answers = [
   "Andre",
   "02/04/2006",
   "Yes!",
+  "No!",
+  "Jasmine and Dug",
+  "Darwin",
 ]
-
-let pastQuestion = []
 
 let randomIndex = Math.floor(Math.random()* questions.length);
 let randomQuestion = questions[randomIndex]
@@ -49,20 +55,23 @@ flashcard.onclick = function(){
 
 }
 
-
 next.onclick = function(){
   randomIndex = Math.floor(Math.random()* questions.length);
   randomQuestion = questions[randomIndex]
   answer = answers[randomIndex]
   flashcard.style.backgroundColor = "white"
   flashcard.style.color = "black"
-  flipped = true
   flashcard.innerHTML = randomQuestion
   console.log(flashcard.innerHTML)
   pastQuestion.push(flashcard.innerHTML)
   console.log(pastQuestion)
 }
 
+
 back.onclick = function(){
-  flashcard.innerHTML = pastQuestion[0]
+  flashcard.innerHTML = pastQuestion[pastQuestion.length - 2]
+  console.log(pastQuestion)
 }
+
+//fix back button working multiple times 
+// fix double of same flash card appearing 
