@@ -37,7 +37,9 @@ let randomIndex = Math.floor(Math.random()* questions.length);
 let randomQuestion = questions[randomIndex]
 let answer = answers[randomIndex]
 let allQuestions = [randomQuestion]
+let allAnswers = [answer]
 console.log(allQuestions)
+console.log(allAnswers)
 
 flashcard.style.backgroundColor = "white"
 flashcard.style.color = "black"
@@ -48,35 +50,66 @@ back.onclick = function(){
   getCurrentQuestion = getCurrentQuestion - 1
   flashcard.innerHTML = allQuestions[getCurrentQuestion]
   console.log(getCurrentQuestion)
-}
-
-
-flashcard.onclick = function(){
+  
+  flashcard.onclick = function(){
     flipped = !flipped;
   if (flipped){
     flashcard.style.backgroundColor = "white"
     flashcard.style.color = "black"
-    flashcard.innerHTML = randomQuestion
+    flashcard.innerHTML = allQuestions[getCurrentQuestion]
     }
     else{
     flashcard.style.backgroundColor = "grey"
     flashcard.style.color = "white"
-    flashcard.innerHTML = answer
+    flashcard.innerHTML = allAnswers[getCurrentQuestion]
     }
+}
 
 }
 
+
+
+
 next.onclick = function(){
+  flashcard.onclick = function(){
+    flipped = !flipped;
+  if (flipped){
+    flashcard.style.backgroundColor = "white"
+    flashcard.style.color = "black"
+    flashcard.innerHTML = allQuestions[getCurrentQuestion]
+    }
+    else{
+    flashcard.style.backgroundColor = "grey"
+    flashcard.style.color = "white"
+    flashcard.innerHTML = allAnswers[getCurrentQuestion]
+    }
+}
+
+  getCurrentQuestion = getCurrentQuestion + 1
+  console.log(getCurrentQuestion)
   randomIndex = Math.floor(Math.random()* questions.length);
   randomQuestion = questions[randomIndex]
   answer = answers[randomIndex]
   allQuestions.push(randomQuestion)
+  allAnswers.push(answer)
   console.log(allQuestions)
-  getCurrentQuestion = getCurrentQuestion + 1
+  console.log(allAnswers)
   flashcard.innerHTML = allQuestions[getCurrentQuestion]
 }
 
-
+flashcard.onclick = function(){
+  flipped = !flipped;
+if (flipped){
+  flashcard.style.backgroundColor = "white"
+  flashcard.style.color = "black"
+  flashcard.innerHTML = randomQuestion
+  }
+  else{
+  flashcard.style.backgroundColor = "grey"
+  flashcard.style.color = "white"
+  flashcard.innerHTML = answer
+  }
+}
 
 
 //fix back button working multiple times 
