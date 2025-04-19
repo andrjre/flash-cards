@@ -8,7 +8,7 @@ console.log(pastQuestion)
 
 
 
-let questions = [
+let questionArray = [
   "What is my favourite color?",
   "What is my favourite animal?",
   "What is my favourite food?",
@@ -19,7 +19,7 @@ let questions = [
   "What are my dogs names?",
   "What is my cats name?",
 ]
-let answers = [
+let answerArray = [
   "Purple",
   "Donkey",
   "Curry",
@@ -42,9 +42,9 @@ else if (getCurrentQuestion === 0 ){
   back.disabled = true;
 }
 
-let randomIndex = Math.floor(Math.random()* questions.length);
-let randomQuestion = questions[randomIndex]
-let answer = answers[randomIndex]
+let randomIndex = Math.floor(Math.random()* questionArray.length);
+let randomQuestion = questionArray[randomIndex]
+let answer = answerArray[randomIndex]
 let allQuestions = [randomQuestion]
 let allAnswers = [answer]
 console.log(allQuestions)
@@ -83,6 +83,11 @@ else if (getCurrentQuestion === 0 ){
 
 }
 
+//if newest push = last push 
+//random index
+
+
+
 next.onclick = function(){
   flashcard.style.backgroundColor = "white"
   flashcard.style.color = "black"
@@ -90,9 +95,9 @@ next.onclick = function(){
 
   getCurrentQuestion = getCurrentQuestion + 1
   console.log(getCurrentQuestion)
-  randomIndex = Math.floor(Math.random()* questions.length);
-  randomQuestion = questions[randomIndex]
-  answer = answers[randomIndex]
+  randomIndex = Math.floor(Math.random()* questionArray.length);
+  randomQuestion = questionArray[randomIndex]
+  answer = answerArray[randomIndex]
   allQuestions.push(randomQuestion)
   allAnswers.push(answer)
   console.log(allQuestions)
@@ -127,6 +132,4 @@ if (flipped){
 
 
 
-//fix back button working multiple times 
 // fix double of same flash card appearing 
-// bug where if you go back answer is to the question after
