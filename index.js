@@ -83,9 +83,6 @@ else if (getCurrentQuestion === 0 ){
 
 }
 
-
-
-
 next.onclick = function(){
   flashcard.onclick = function(){
     flipped = !flipped;
