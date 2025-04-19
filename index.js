@@ -6,6 +6,8 @@ let pastQuestion = []
 let pastAnswer = []
 console.log(pastQuestion)
 
+
+
 let questions = [
   "What is my favourite color?",
   "What is my favourite animal?",
@@ -32,6 +34,13 @@ let answers = [
 let getCurrentQuestion = 0;
 console.log(getCurrentQuestion)
 
+
+if(getCurrentQuestion ==! 0 ){
+  back.disabled = false;
+}
+else if (getCurrentQuestion === 0 ){
+  back.disabled = true;
+}
 
 let randomIndex = Math.floor(Math.random()* questions.length);
 let randomQuestion = questions[randomIndex]
@@ -65,6 +74,13 @@ back.onclick = function(){
     }
 }
 
+if(getCurrentQuestion ==! 0 ){
+  back.disabled = false;
+}
+else if (getCurrentQuestion === 0 ){
+  back.disabled = true;
+}
+
 }
 
 
@@ -95,6 +111,14 @@ next.onclick = function(){
   console.log(allQuestions)
   console.log(allAnswers)
   flashcard.innerHTML = allQuestions[getCurrentQuestion]
+
+  if(getCurrentQuestion ==! 0 ){
+    back.disabled = false;
+  }
+  else if (getCurrentQuestion === 0 ){
+    back.disabled = true;
+  }
+
 }
 
 flashcard.onclick = function(){
@@ -110,6 +134,10 @@ if (flipped){
   flashcard.innerHTML = answer
   }
 }
+
+
+
+
 
 
 //fix back button working multiple times 
