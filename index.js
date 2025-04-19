@@ -84,19 +84,9 @@ else if (getCurrentQuestion === 0 ){
 }
 
 next.onclick = function(){
-  flashcard.onclick = function(){
-    flipped = !flipped;
-  if (flipped){
-    flashcard.style.backgroundColor = "white"
-    flashcard.style.color = "black"
-    flashcard.innerHTML = allQuestions[getCurrentQuestion]
-    }
-    else{
-    flashcard.style.backgroundColor = "grey"
-    flashcard.style.color = "white"
-    flashcard.innerHTML = allAnswers[getCurrentQuestion]
-    }
-}
+  flashcard.style.backgroundColor = "white"
+  flashcard.style.color = "black"
+  flipped = true;
 
   getCurrentQuestion = getCurrentQuestion + 1
   console.log(getCurrentQuestion)
